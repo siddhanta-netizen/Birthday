@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+/* ---------------- GLOBAL ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle, #ff79b0, #ff1473, #d6005c);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 22px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120vh) scale(0.5); opacity: 0;}
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 25px white;
+  background: linear-gradient(to right, #fff, #ffe4f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGlow 3s infinite linear;
+}
+
+@keyframes neonGlow {
+  0% { text-shadow: 0 0 15px #fff; }
+  50% { text-shadow: 0 0 35px #ffb3d9; }
+  100% { text-shadow: 0 0 15px #fff; }
+}
+
+/* Typing */
+.typing {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  min-height: 40px;
+  letter-spacing: 1px;
+}
+
+/* Button Ripple */
+.btn {
+  margin-top: 25px;
+  padding: 12px 35px;
+  background: #fff;
+  color: #ff007f;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.btn span.ripple {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 20, 147, 0.3);
+  border-radius: 50%;
+  animation: rippleEffect 0.6s linear;
+}
+
+@keyframes rippleEffect {
+  from { transform: scale(0); opacity: 0.7; }
+  to { transform: scale(6); opacity: 0; }
+}
+
+/* Popup */
+.popup {
+  width: 80%;
+  margin: 30px auto 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  display: none;
+  border: 2px solid rgba(255, 200, 230, 0.8);
+  animation: popupFade 0.8s;
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---------------- GALLERY ---------------- */
+.gallery-section {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px #ffdef0; }
+  to   { text-shadow: 0 0 25px #fff; }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  filter: blur(4px);
+  transition: 0.8s ease-in-out;
+  border: 3px solid rgba(255,255,255,0.4);
+}
+
+.gallery img.show {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEARTS -->
+<div id="hearts"></div>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <h1 class="title">Happy Birthday To You Mor Jaaniya❤️</h1>
+  <p class="typing" id="typing"></p>
+
+  <button class="btn" onclick="showMessage(event)">
+      Surprise 🎁
+  </button>
+
+  <div class="popup" id="popup">
+    <p>
+      Happy Birthday mor jaan 🎉❤️
+Aajke e special din mein, ham toh se ek baat kahab—
+tohar bina hmr jeewan adhura ba.
+Tohe paail k  baad se, hmr din, hmr muskaan,
+sab kuch badal gail.
+
+Tohar hasi dekh k hmr dil khusi se bhar jaat.
+Tohar baat sun k hmr man shaant ho jaat,
+
+Ham hamesha tohar sathe rahab,
+tohar khusim hmr khusi ba,
+ani dukhim tohar sath deb.
+
+Aaaj k din tohe bahut dher khusi mile,
+ani tohar sab sapna pura hoye.
+tohar sochal sab pura hoye.
+
+Ham khub dhere lucky feel karathi
+ki tu hmr life mein aaila.
+
+Once again, Happy Birthday mor jaan! 🎂✨
+ 💕🥰
+                <br><br>
+                I love you mor Janiya (endlessly) 😘❤️ !!!!!!!!!!!
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section reveal">
+  <h2 class="gallery-title">Birthday Gurl (My jaan)😘❤️</h2>
+
+  <div class="gallery">
+    <img src="1.png">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+    <img src="6.jpg">
+    <img src="7.jpg">
+    <img src="8.jpg">
+    <img src="9.jpeg">
+    <img src="10.jpeg">
+    <img src="11.jpeg">
+    <img src="12.jpeg">
+  </div>
+</section>
+
+<script>
+// Floating Hearts
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.innerHTML = "💖";
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+
+// Typing Effect
+let text = "Wishing you the happiest birthday ever! 🎉❤️";
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 60);
+  }
+}
+typeWriter();
+
+// Popup
+function showMessage(e) {
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+
+  // Ripple
+  let ripple = document.createElement("span");
+  ripple.classList.add("ripple");
+  ripple.style.left = e.clientX - e.target.offsetLeft + "px";
+  ripple.style.top = e.clientY - e.target.offsetTop + "px";
+  e.target.appendChild(ripple);
+
+  setTimeout(() => ripple.remove(), 600);
+}
+
+// Scroll Reveal
+function revealOnScroll() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+
+  // gallery reveal
+  document.querySelectorAll(".gallery img").forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 20) {
+      img.classList.add("show");
+    }
+  });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
